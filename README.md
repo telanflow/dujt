@@ -3,6 +3,7 @@
 
 # 安装
 [Download](https://github.com/telanflow/dujt/releases)
+下载可执行文件到 dujt 根目录执行即可。
 
 # Usage
 ```
