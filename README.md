@@ -3,7 +3,13 @@
 
 ## 安装
 [Download](https://github.com/telanflow/dujt/releases)
-下载可执行文件到 dujt 根目录执行即可。
+下载可执行文件到 dujt/web/ 目录执行即可。
+
+## 特性
+- 超快响应、性能怪兽
+- 部署简单
+- 无数据库依赖（默认：毒鸡汤文件放在 web/statement.txt 中，根据换行识别一条语句）
+- 自动重载：程序会监听 “毒鸡汤文件（statement.txt）” 变更，然后重新加载，无需重启程序
 
 ## Usage
 ```
@@ -11,13 +17,15 @@
 
 Usage of ./darwin_amd64:
   -addr string
-        服务地址 (default "0.0.0.0")
+    	服务地址 (default "0.0.0.0")
   -port string
-        服务端口 (default "80")
+    	服务端口 (default "80")
+  -target string
+    	毒鸡汤文件路径 (default "statement.txt")
 ``` 
 
 ## 对于维护：
-1. data/data.go加一条文本、重新编译一下Go程序即可。编译代码已经在项目下：sh ./build.sh
+1. 直接修改 web/statement.txt 文件，添加一条语句即可，无需重启程序！
 2. 需要结束程序  直接 kill 即可
 3. Go程序后台执行，由于我没有写此功能，so 可以借助第三方实现：
 
@@ -33,6 +41,7 @@ Usage of ./darwin_amd64:
     line: 毒鸡汤语句
 
 ## 预览图
+![screenshot](screenshot_exec.jpg)
 ![screenshot](screenshot.png)
 
 ## 感谢
